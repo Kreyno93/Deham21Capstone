@@ -17,5 +17,16 @@ resource "aws_subnet" "pub1-wordpress" {
   }
 }
 
+# Launch Ec2 Instance
+resource "aws_instance" "wordpress" {
+  ami           = "ami-08f78cb3cc8a4578e" 
+  instance_type = "t2.micro"
+  subnet_id     = aws_subnet.pub1-wordpress.id
+
+  tags = {
+    Name = "wordpress-instance"
+  }
+}
+
 
 
