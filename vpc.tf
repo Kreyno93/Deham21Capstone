@@ -23,10 +23,9 @@ resource "aws_instance" "wordpress" {
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.pub1-wordpress.id
 
+  # user_data = file("userdata.sh")
+
   tags = {
     Name = "wordpress-instance"
   }
 }
-
-
-
